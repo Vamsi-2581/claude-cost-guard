@@ -4,7 +4,10 @@ All notable changes to Claude cost guard are written here. The format follows [K
 
 ## [Unreleased]
 
-- `budget set --model <name>` notes when the name matches no model in your history, and lists the models it has seen, so a typo such as `--model opuss` no longer saves a budget that silently never applies. The budget is still saved; with no sessions yet, it says the name could not be checked. ([#5](https://github.com/nrzz/claude-cost-guard/issues/5))
+## [1.2.0] - 2026-11-03
+
+- `budget set --model <name>` notes when the name matches no model in your history, and lists the models it has seen, so a typo such as `--model opuss` no longer saves a budget that silently never applies. The budget is still saved; with no sessions yet, it says the name could not be checked. A name that matches prints nothing extra, the note comes before the usage line, and the hook is unchanged.
+- Contributed by [@nightlab-agent](https://github.com/nightlab-agent) in [#6](https://github.com/nrzz/claude-cost-guard/pull/6), for the good first issue [#5](https://github.com/nrzz/claude-cost-guard/issues/5). The pull request's tests ran on Windows, macOS and Linux with Node 18 to 24 before the merge.
 
 ## [1.1.0] - 2026-10-28
 
@@ -23,6 +26,7 @@ All notable changes to Claude cost guard are written here. The format follows [K
 - First release: daily and weekly budgets in dollars or fresh tokens, zero-token warnings at 50%, 80% and 100%, hard mode, an incremental index under a time budget, report, today and statusline; a plugin.
 - Hard mode never blocks slash commands or `!` shell commands; drive-letter project paths work on macOS and Linux (caught by CI).
 
+[1.2.0]: https://github.com/nrzz/claude-cost-guard/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/nrzz/claude-cost-guard/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/nrzz/claude-cost-guard/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/nrzz/claude-cost-guard/releases/tag/v1.0.0
