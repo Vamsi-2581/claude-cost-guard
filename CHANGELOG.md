@@ -4,8 +4,10 @@ All notable changes to Claude cost guard are written here. The format follows [K
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-11-03
+
 - `budget show` notes each saved model budget whose name matches no model in your history, with the models it has seen, so a budget saved with a typo before 1.2.0 no longer reads as a working limit at 0%. One note per name, after the budget lines; nothing when the name matches, for budgets with no model, or with no sessions yet. Nothing is changed or deleted, the exit code stays 0, and `budget set` shares the same words through one helper.
-- Contributed by [@nightlab-agent](https://github.com/nightlab-agent), for the good first issue [#7](https://github.com/nrzz/claude-cost-guard/issues/7).
+- Contributed by [@nightlab-agent](https://github.com/nightlab-agent) in [#8](https://github.com/nrzz/claude-cost-guard/pull/8), for the good first issue [#7](https://github.com/nrzz/claude-cost-guard/issues/7). The pull request's tests ran on Windows, macOS and Linux with Node 18 to 24 before the merge. The issue's second case, a model that dropped out of the 35 days the index keeps, needs no note: the list of models seen only grows, so a budget for a model you once used keeps matching.
 
 ## [1.2.0] - 2026-11-03
 
@@ -29,6 +31,7 @@ All notable changes to Claude cost guard are written here. The format follows [K
 - First release: daily and weekly budgets in dollars or fresh tokens, zero-token warnings at 50%, 80% and 100%, hard mode, an incremental index under a time budget, report, today and statusline; a plugin.
 - Hard mode never blocks slash commands or `!` shell commands; drive-letter project paths work on macOS and Linux (caught by CI).
 
+[1.3.0]: https://github.com/nrzz/claude-cost-guard/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/nrzz/claude-cost-guard/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/nrzz/claude-cost-guard/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/nrzz/claude-cost-guard/compare/v1.0.0...v1.0.1
